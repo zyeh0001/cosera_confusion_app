@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/cosera_confusion_app/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/cosera_confusion_app/static/js/main.3316e1fc.chunk.js",
+    "main.js.map": "/cosera_confusion_app/static/js/main.3316e1fc.chunk.js.map",
+    "runtime-main.js": "/cosera_confusion_app/static/js/runtime-main.49b27bd1.js",
+    "runtime-main.js.map": "/cosera_confusion_app/static/js/runtime-main.49b27bd1.js.map",
+    "static/js/2.80bdabeb.chunk.js": "/cosera_confusion_app/static/js/2.80bdabeb.chunk.js",
+    "static/js/2.80bdabeb.chunk.js.map": "/cosera_confusion_app/static/js/2.80bdabeb.chunk.js.map",
+    "static/js/3.9616a6d1.chunk.js": "/cosera_confusion_app/static/js/3.9616a6d1.chunk.js",
+    "static/js/3.9616a6d1.chunk.js.map": "/cosera_confusion_app/static/js/3.9616a6d1.chunk.js.map",
+    "index.html": "/cosera_confusion_app/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/cosera_confusion_app/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.80bdabeb.chunk.js.LICENSE.txt": "/cosera_confusion_app/static/js/2.80bdabeb.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/cosera_confusion_app/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.49b27bd1.js",
+    "static/js/2.80bdabeb.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.3316e1fc.chunk.js"
+  ]
+}
