@@ -15,12 +15,20 @@ export class DishdetailComponent extends Component {
 
   render() {
     const dish = this.props.selectItem;
+
+    console.log(dish.comments);
+
     const commentList = this.props.selectItem.comments.map((comment) => {
       return (
         <div>
           <CardText>{comment.comment}</CardText>
           <CardText>
-            --{comment.author}, {comment.date.substring(0, 10)}
+            --{comment.author},{' '}
+            {new Intl.DateTimeFormat('en-US', {
+              year: 'numeric',
+              month: 'short',
+              day: '2-digit',
+            }).format(new Date(Date.parse(comment.date)))}
           </CardText>
           <br></br>
         </div>
@@ -42,6 +50,7 @@ export class DishdetailComponent extends Component {
             <CardBody>
               <CardTitle>Comments</CardTitle>
               {commentList}
+              {/* {comments} */}
             </CardBody>
           </Card>
         </div>
