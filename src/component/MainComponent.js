@@ -10,6 +10,7 @@ import { PROMOTIONS } from '../shared/promotions';
 import Header from './Header';
 import Footer from './Footer';
 import Home from './HomeComponent';
+import About from './AboutUsComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 class Main extends Component {
@@ -44,6 +45,9 @@ class Main extends Component {
         />
       );
     };
+    const AboutUsPage = () => {
+      return <About leaders={this.state.leaders} />;
+    };
 
     const DishWithId = ({ match }) => {
       return (
@@ -70,6 +74,7 @@ class Main extends Component {
             component={() => <Menu dishes={this.state.dishes} />}
           />
           <Route path='/menu/:dishId' component={DishWithId} />
+          <Route path='/aboutus' component={AboutUsPage} />
           <Route exact path='/contactme' component={Contact} />
 
           <Redirect to='/' />
