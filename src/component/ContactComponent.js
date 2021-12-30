@@ -3,15 +3,22 @@ import {
   Breadcrumb,
   BreadcrumbItem,
   Row,
-  Form,
+  // Form,
   Button,
   Label,
-  Input,
+  // Input,
   Col,
-  FormFeedback,
+  // FormFeedback,
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) => !val || val.length <= len;
+const minLength = (len) => (val) => val && val.length >= len;
+const isNumber = (val) => !isNaN(Number(val));
+const validEmail = (val) =>
+  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
 class Contact extends Component {
   constructor(props) {
@@ -170,11 +177,26 @@ class Contact extends Component {
                     name='firstname'
                     placeholder='First Name'
                     className='form-control'
+                    validators={{
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(10),
+                    }}
                     // value={this.state.firstname}
                     // valid={errors.firstname === ''}
                     // invalid={errors.firstname !== ''}
                     // onBlur={this.handleBlur('firstname')}
                     // onChange={this.handleInputChange}
+                  />
+                  <Errors
+                    className='text-danger'
+                    model='.firstname'
+                    show='touched'
+                    messages={{
+                      required: 'Required',
+                      minLength: 'Must be greater than 3 charactor',
+                      maxLength: 'Must be 10 charactor or less',
+                    }}
                   />
                   {/* <FormFeedback>{errors.firstname}</FormFeedback> */}
                 </Col>
@@ -190,11 +212,26 @@ class Contact extends Component {
                     name='lastname'
                     placeholder='Last Name'
                     className='form-control'
+                    validators={{
+                      required,
+                      minLength: minLength(3),
+                      maxLength: maxLength(10),
+                    }}
                     // value={this.state.lastname}
                     // valid={errors.lastname === ''}
                     // invalid={errors.lastname !== ''}
                     // onBlur={this.handleBlur('lastname')}
                     // onChange={this.handleInputChange}
+                  />
+                  <Errors
+                    className='text-danger'
+                    model='.lastname'
+                    show='touched'
+                    messages={{
+                      required: 'Required',
+                      minLength: 'Must be greater than 3 charactor',
+                      maxLength: 'Must be 10 charactor or less',
+                    }}
                   />
                   {/* <FormFeedback>{errors.lastname}</FormFeedback> */}
                 </Col>
@@ -210,6 +247,10 @@ class Contact extends Component {
                     name='telnum'
                     placeholder='Tel. number'
                     className='form-control'
+                    validators={{
+                      required,
+                      isNumber,
+                    }}
                     // value={this.state.telnum}
                     // valid={errors.telnum === ''}
                     // invalid={errors.telnum !== ''}
@@ -217,6 +258,15 @@ class Contact extends Component {
                     // onChange={this.handleInputChange}
                   />
                   {/* <FormFeedback>{errors.telnum}</FormFeedback> */}
+                  <Errors
+                    className='text-danger'
+                    model='.telnum'
+                    show='touched'
+                    messages={{
+                      required: 'Required',
+                      isNumber: 'Tel number must be integer',
+                    }}
+                  />
                 </Col>
               </Row>
               <Row className='form-group'>
@@ -230,11 +280,24 @@ class Contact extends Component {
                     name='email'
                     placeholder='Email'
                     className='form-control'
+                    validators={{
+                      required,
+                      validEmail,
+                    }}
                     // value={this.state.email}
                     // valid={errors.email === ''}
                     // invalid={errors.email !== ''}
                     // onBlur={this.handleBlur('email')}
                     // onChange={this.handleInputChange}
+                  />
+                  <Errors
+                    className='text-danger'
+                    model='.email'
+                    show='touched'
+                    messages={{
+                      required: 'Required',
+                      validEmail: 'This is not a valid email address',
+                    }}
                   />
                   {/* <FormFeedback>{errors.email}</FormFeedback> */}
                 </Col>
