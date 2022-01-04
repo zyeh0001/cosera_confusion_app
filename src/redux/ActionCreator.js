@@ -16,21 +16,78 @@ export const fetchDishes = () => (dispatch) => {
   dispatch(dishesLoading(true));
 
   return fetch(baseUrl + 'dishes')
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error(
+            'Error' + response.status + ': ' + response.statusText
+          ); //a new error message generate by the response status
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        //when you dont hear from the response
+        var errmess = new Error(error.message);
+        throw errmess;
+      }
+    )
     .then((response) => response.json())
-    .then((dishes) => dispatch(addDishes(dishes)));
+    .then((dishes) => dispatch(addDishes(dishes)))
+    .catch((error) => dispatch(dishesFaild(error.message)));
 };
 
 export const fetchPromos = () => (dispatch) => {
   dispatch(promosLoading(true));
   return fetch(baseUrl + 'promotions')
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error(
+            'Error' + response.status + ': ' + response.statusText
+          ); //a new error message generate by the response status
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        //when you dont hear from the response
+        var errmess = new Error(error.message);
+        throw errmess;
+      }
+    )
     .then((response) => response.json())
-    .then((promos) => dispatch(addPromos(promos)));
+    .then((promos) => dispatch(addPromos(promos)))
+    .catch((error) => dispatch(promosFaild(error.message)));
 };
 
 export const fetchComments = () => (dispatch) => {
   return fetch(baseUrl + 'comments')
+    .then(
+      (response) => {
+        if (response.ok) {
+          return response;
+        } else {
+          var error = new Error(
+            'Error' + response.status + ': ' + response.statusText
+          ); //a new error message generate by the response status
+          error.response = response;
+          throw error;
+        }
+      },
+      (error) => {
+        //when you dont hear from the response
+        var errmess = new Error(error.message);
+        throw errmess;
+      }
+    )
     .then((response) => response.json())
-    .then((comments) => dispatch(addComments(comments)));
+    .then((comments) => dispatch(addComments(comments)))
+    .catch((error) => dispatch(commentsFaild(error.message)));
 };
 
 export const dishesLoading = () => ({
