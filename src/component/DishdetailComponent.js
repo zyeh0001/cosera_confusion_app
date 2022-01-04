@@ -17,6 +17,8 @@ import {
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
+import LoadingComponent from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 const required = (val) => val && val.length;
 const maxLength = (len) => (val) => !val || val.length <= len;
@@ -143,7 +145,7 @@ function RenderDish({ dish }) {
   return (
     <div className='col-12 col-md-5 m-1'>
       <Card>
-        <CardImg width='100%' src={dish.image} alt={dish.name} />
+        <CardImg width='100%' src={baseUrl + dish.image} alt={dish.name} />
         <CardBody>
           <CardTitle>{dish.name}</CardTitle>
           <CardText>{dish.description}</CardText>
@@ -156,7 +158,7 @@ function RenderDish({ dish }) {
 function RenderComments({ comments, addComment, dishId }) {
   const commentList = comments.map((comment) => {
     return (
-      <>
+      <div key={comment.id}>
         <CardText>{comment.comment}</CardText>
         <CardText>
           --{comment.author},{' '}
@@ -166,7 +168,7 @@ function RenderComments({ comments, addComment, dishId }) {
             day: '2-digit',
           }).format(new Date(Date.parse(comment.date)))}
         </CardText>
-      </>
+      </div>
     );
   });
   if (comments != null)
@@ -185,7 +187,23 @@ function RenderComments({ comments, addComment, dishId }) {
 }
 
 const DishdetailComponent = (props) => {
-  if (props.dish != null)
+  if (props.isLoading) {
+    return (
+      <div className='container'>
+        <div className='row'>
+          <LoadingComponent />
+        </div>
+      </div>
+    );
+  } else if (props.errMess) {
+    return (
+      <div className='container'>
+        <div className='row'>
+          <h4>{props.errMess}</h4>
+        </div>
+      </div>
+    );
+  } else if (props.dish != null)
     return (
       <div className='container'>
         <div className='row'>
