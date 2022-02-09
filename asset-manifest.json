@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.css": "/cosera_confusion_app/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/cosera_confusion_app/static/js/main.3316e1fc.chunk.js",
-    "main.js.map": "/cosera_confusion_app/static/js/main.3316e1fc.chunk.js.map",
-    "runtime-main.js": "/cosera_confusion_app/static/js/runtime-main.49b27bd1.js",
-    "runtime-main.js.map": "/cosera_confusion_app/static/js/runtime-main.49b27bd1.js.map",
-    "static/js/2.80bdabeb.chunk.js": "/cosera_confusion_app/static/js/2.80bdabeb.chunk.js",
-    "static/js/2.80bdabeb.chunk.js.map": "/cosera_confusion_app/static/js/2.80bdabeb.chunk.js.map",
-    "static/js/3.9616a6d1.chunk.js": "/cosera_confusion_app/static/js/3.9616a6d1.chunk.js",
-    "static/js/3.9616a6d1.chunk.js.map": "/cosera_confusion_app/static/js/3.9616a6d1.chunk.js.map",
+    "main.css": "/cosera_confusion_app/static/css/main.128b88b3.chunk.css",
+    "main.js": "/cosera_confusion_app/static/js/main.37b4154e.chunk.js",
+    "main.js.map": "/cosera_confusion_app/static/js/main.37b4154e.chunk.js.map",
+    "runtime-main.js": "/cosera_confusion_app/static/js/runtime-main.4d7d6432.js",
+    "runtime-main.js.map": "/cosera_confusion_app/static/js/runtime-main.4d7d6432.js.map",
+    "static/css/2.b0d98584.chunk.css": "/cosera_confusion_app/static/css/2.b0d98584.chunk.css",
+    "static/js/2.ef5f2f61.chunk.js": "/cosera_confusion_app/static/js/2.ef5f2f61.chunk.js",
+    "static/js/2.ef5f2f61.chunk.js.map": "/cosera_confusion_app/static/js/2.ef5f2f61.chunk.js.map",
+    "static/js/3.7443e554.chunk.js": "/cosera_confusion_app/static/js/3.7443e554.chunk.js",
+    "static/js/3.7443e554.chunk.js.map": "/cosera_confusion_app/static/js/3.7443e554.chunk.js.map",
     "index.html": "/cosera_confusion_app/index.html",
-    "static/css/main.8c8b27cf.chunk.css.map": "/cosera_confusion_app/static/css/main.8c8b27cf.chunk.css.map",
-    "static/js/2.80bdabeb.chunk.js.LICENSE.txt": "/cosera_confusion_app/static/js/2.80bdabeb.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/cosera_confusion_app/static/media/logo.6ce24c58.svg"
+    "static/css/2.b0d98584.chunk.css.map": "/cosera_confusion_app/static/css/2.b0d98584.chunk.css.map",
+    "static/css/main.128b88b3.chunk.css.map": "/cosera_confusion_app/static/css/main.128b88b3.chunk.css.map",
+    "static/js/2.ef5f2f61.chunk.js.LICENSE.txt": "/cosera_confusion_app/static/js/2.ef5f2f61.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/cosera_confusion_app/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/logo.23118273.png": "/cosera_confusion_app/static/media/logo.23118273.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.49b27bd1.js",
-    "static/js/2.80bdabeb.chunk.js",
-    "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.3316e1fc.chunk.js"
+    "static/js/runtime-main.4d7d6432.js",
+    "static/css/2.b0d98584.chunk.css",
+    "static/js/2.ef5f2f61.chunk.js",
+    "static/css/main.128b88b3.chunk.css",
+    "static/js/main.37b4154e.chunk.js"
   ]
 }
